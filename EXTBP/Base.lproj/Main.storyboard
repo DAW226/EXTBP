@@ -30,7 +30,7 @@
                                 </segments>
                                 <color key="tintColor" red="1" green="0.94246747249999996" blue="0.91356294770000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <action selector="loginSegmentedControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="bmO-S9-r8r"/>
+                                    <action selector="loginRegisterSegmentedControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="fcK-Es-3Ud"/>
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUD-zc-lYD">
@@ -43,7 +43,7 @@
                                     <color key="titleColor" red="0.59673592929999997" green="0.048898193079999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3am-Hz-4fp"/>
+                                    <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vMT-2g-Kdc"/>
                                     <segue destination="0tV-0g-Upg" kind="modal" id="UEp-41-GyU"/>
                                 </connections>
                             </button>
@@ -62,6 +62,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zDp-f9-Qwp">
+                                <color key="backgroundColor" red="1" green="0.94246747249999996" blue="0.91356294770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="323" id="1Pg-S1-Rbh"/>
+                                    <constraint firstAttribute="height" constant="49" id="K8Y-Ml-lTO"/>
+                                </constraints>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" red="0.59673592929999997" green="0.048898193079999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="registerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iVd-4S-vlp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.59673592929999997" green="0.048898193079999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -70,10 +83,12 @@
                             <constraint firstAttribute="trailingMargin" secondItem="SAD-KD-3oe" secondAttribute="trailing" id="6T4-Ft-Ekh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HVH-mj-Mk5" secondAttribute="trailing" id="9qy-p4-7hI"/>
                             <constraint firstItem="nUD-zc-lYD" firstAttribute="top" secondItem="HVH-mj-Mk5" secondAttribute="bottom" constant="88" id="DPh-yc-OvU"/>
+                            <constraint firstItem="zDp-f9-Qwp" firstAttribute="centerX" secondItem="HVH-mj-Mk5" secondAttribute="centerX" id="ItI-CQ-ljX"/>
                             <constraint firstItem="HVH-mj-Mk5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-109.5" id="JIw-U3-cdQ"/>
                             <constraint firstItem="4Xy-v0-elV" firstAttribute="centerX" secondItem="HVH-mj-Mk5" secondAttribute="centerX" id="NqW-mh-8cc"/>
                             <constraint firstItem="HVH-mj-Mk5" firstAttribute="top" secondItem="4Xy-v0-elV" secondAttribute="bottom" constant="77" id="PM5-8x-oYA"/>
                             <constraint firstItem="HVH-mj-Mk5" firstAttribute="top" secondItem="SAD-KD-3oe" secondAttribute="bottom" constant="17" id="afI-8M-lfE"/>
+                            <constraint firstItem="zDp-f9-Qwp" firstAttribute="top" secondItem="HVH-mj-Mk5" secondAttribute="bottom" constant="88" id="iry-km-oK4"/>
                             <constraint firstItem="C4i-ec-NLa" firstAttribute="top" secondItem="HVH-mj-Mk5" secondAttribute="bottom" constant="19" id="l2E-GV-hkm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="C4i-ec-NLa" secondAttribute="trailing" id="n2O-bs-REu"/>
                             <constraint firstAttribute="leadingMargin" secondItem="HVH-mj-Mk5" secondAttribute="leading" id="uQa-Fn-r2W"/>
@@ -82,15 +97,17 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="emailTextField" destination="HVH-mj-Mk5" id="Ito-ku-HMF"/>
-                        <outlet property="loginRegisterSegmentedControl" destination="4Xy-v0-elV" id="Kbm-Fc-HKm"/>
-                        <outlet property="passwordTextField" destination="C4i-ec-NLa" id="a9i-pU-0EJ"/>
-                        <outlet property="usernameTextField" destination="SAD-KD-3oe" id="s9Z-f5-lIc"/>
+                        <outlet property="emailTextField" destination="HVH-mj-Mk5" id="eJw-8D-J9q"/>
+                        <outlet property="loginSegmentedControl" destination="4Xy-v0-elV" id="uYH-wD-8wH"/>
+                        <outlet property="loginUIButton" destination="nUD-zc-lYD" id="khv-0Z-7LP"/>
+                        <outlet property="passwordTextField" destination="C4i-ec-NLa" id="9Xd-1O-7lj"/>
+                        <outlet property="registerUIButton" destination="zDp-f9-Qwp" id="mib-GN-Ve4"/>
+                        <outlet property="usernameTextField" destination="SAD-KD-3oe" id="v51-jB-d0f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="207" y="90"/>
+            <point key="canvasLocation" x="205.59999999999999" y="89.505247376311857"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="q0N-Aw-QRT">
@@ -160,24 +177,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PDb-Da-waE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="964" y="89.505247376311857"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="j3g-xz-a4w">
-            <objects>
-                <viewController id="QWK-qB-MP5" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="lWH-nF-Efj"/>
-                        <viewControllerLayoutGuide type="bottom" id="aqF-OI-Ocp"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tPf-cc-5AY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.59673592929999997" green="0.048898193079999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="80Z-BH-8wt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1666" y="90"/>
         </scene>
     </scenes>
 </document>

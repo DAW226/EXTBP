@@ -1,0 +1,6 @@
+framework module Pods_EXTBP {
+  umbrella header "Pods-EXTBP-umbrella.h"
+
+  export *
+  module * { export * }
+}
