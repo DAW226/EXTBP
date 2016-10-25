@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EXTBP" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +18,166 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4Xy-v0-elV">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="323" id="9FY-6O-a4k"/>
+                                    <constraint firstAttribute="height" constant="28" id="X4X-9L-R8q"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Login"/>
+                                    <segment title="Register"/>
+                                </segments>
+                                <color key="tintColor" red="1" green="0.94246747249999996" blue="0.91356294770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="loginSegmentedControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="bmO-S9-r8r"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUD-zc-lYD">
+                                <color key="backgroundColor" red="1" green="0.94246747249999996" blue="0.91356294770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="323" id="cpy-8O-r0z"/>
+                                    <constraint firstAttribute="height" constant="49" id="vqC-O7-qrC"/>
+                                </constraints>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.59673592929999997" green="0.048898193079999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3am-Hz-4fp"/>
+                                    <segue destination="0tV-0g-Upg" kind="modal" id="UEp-41-GyU"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SAD-KD-3oe">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HVH-mj-Mk5">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C4i-ec-NLa">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.59673592929999997" green="0.048898193079999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="HVH-mj-Mk5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1AF-Ls-Sdz"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="SAD-KD-3oe" secondAttribute="leading" id="5Yn-NO-q0v"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SAD-KD-3oe" secondAttribute="trailing" id="6T4-Ft-Ekh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HVH-mj-Mk5" secondAttribute="trailing" id="9qy-p4-7hI"/>
+                            <constraint firstItem="nUD-zc-lYD" firstAttribute="top" secondItem="HVH-mj-Mk5" secondAttribute="bottom" constant="88" id="DPh-yc-OvU"/>
+                            <constraint firstItem="HVH-mj-Mk5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-109.5" id="JIw-U3-cdQ"/>
+                            <constraint firstItem="4Xy-v0-elV" firstAttribute="centerX" secondItem="HVH-mj-Mk5" secondAttribute="centerX" id="NqW-mh-8cc"/>
+                            <constraint firstItem="HVH-mj-Mk5" firstAttribute="top" secondItem="4Xy-v0-elV" secondAttribute="bottom" constant="77" id="PM5-8x-oYA"/>
+                            <constraint firstItem="HVH-mj-Mk5" firstAttribute="top" secondItem="SAD-KD-3oe" secondAttribute="bottom" constant="17" id="afI-8M-lfE"/>
+                            <constraint firstItem="C4i-ec-NLa" firstAttribute="top" secondItem="HVH-mj-Mk5" secondAttribute="bottom" constant="19" id="l2E-GV-hkm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="C4i-ec-NLa" secondAttribute="trailing" id="n2O-bs-REu"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="HVH-mj-Mk5" secondAttribute="leading" id="uQa-Fn-r2W"/>
+                            <constraint firstItem="nUD-zc-lYD" firstAttribute="centerX" secondItem="HVH-mj-Mk5" secondAttribute="centerX" id="x7M-eY-QKA"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="C4i-ec-NLa" secondAttribute="leading" id="zq7-lf-uwa"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="HVH-mj-Mk5" id="Ito-ku-HMF"/>
+                        <outlet property="loginRegisterSegmentedControl" destination="4Xy-v0-elV" id="Kbm-Fc-HKm"/>
+                        <outlet property="passwordTextField" destination="C4i-ec-NLa" id="a9i-pU-0EJ"/>
+                        <outlet property="usernameTextField" destination="SAD-KD-3oe" id="s9Z-f5-lIc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="207" y="90"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="q0N-Aw-QRT">
+            <objects>
+                <viewController id="0tV-0g-Upg" customClass="ProfileViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cQl-gC-1v6"/>
+                        <viewControllerLayoutGuide type="bottom" id="4Dt-2a-wt4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1kY-0u-oRs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fVG-xe-TTa">
+                                <frame key="frameInset" minX="16" minY="28" width="343" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Profile"/>
+                                    <segment title="Submission History"/>
+                                </segments>
+                                <color key="tintColor" red="1" green="0.94246747249999996" blue="0.91356294770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="profSubSwtch:" destination="0tV-0g-Upg" eventType="valueChanged" id="hha-8m-k95"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jfo-jx-M5y">
+                                <frame key="frameInset" minX="16" minY="577" width="343" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.94246747249999996" blue="0.91356294770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Make a Submission">
+                                    <color key="titleColor" red="0.59673592929999997" green="0.048898193079999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="makeSubmission:" destination="0tV-0g-Upg" eventType="touchUpInside" id="U4I-Sw-D9Z"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vPR-jl-eS9">
+                                <frame key="frameInset" minX="16" minY="75" width="343" height="480"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ta2-lr-4fu">
+                                <frame key="frameInset" minX="16" minY="260" width="343" height="295"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vdT-Ju-snc">
+                                <frame key="frameInset" minX="16" minY="75" width="343" height="167"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.59673592929999997" green="0.048898193079999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="profileImageView" destination="vdT-Ju-snc" id="GQx-te-TCz"/>
+                        <outlet property="profileSegmentedControl" destination="fVG-xe-TTa" id="kw9-5e-Ng0"/>
+                        <outlet property="profileTextView" destination="Ta2-lr-4fu" id="Ms8-sY-KHo"/>
+                        <outlet property="subHistoryTextView" destination="vPR-jl-eS9" id="uSZ-6P-JP8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PDb-Da-waE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="964" y="89.505247376311857"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="j3g-xz-a4w">
+            <objects>
+                <viewController id="QWK-qB-MP5" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lWH-nF-Efj"/>
+                        <viewControllerLayoutGuide type="bottom" id="aqF-OI-Ocp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tPf-cc-5AY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.59673592929999997" green="0.048898193079999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="80Z-BH-8wt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1666" y="90"/>
         </scene>
     </scenes>
 </document>
